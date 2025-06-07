@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SEC TREASER TEAM - Mobile</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    :root {
+      --color-black: #111111;
+      --color-gray: #6b7280;
+      --color-red: #FF000B;
+      --color-green: #14FF00;
+      --color-darkblue: #09FF00;
+      --color-green-dark: #1100FF;
+      --bg-color: #000000;
+      --text-color: var(--color-gray);
+      --heading-color: var(--color-black);
+    }
+    /* Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 20px 15px 40px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      user-select: text;
+    }
+    .container {
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Profile image: remove box shadow and border radius for no "kotak-kotak" */
+    img.profile {
+      width: 170px;
+      height: 170px;
+      object-fit: cover;
+      margin: 0 auto 20px;
+      display: block;
+      border-radius: 0; /* no rounding */
+      box-shadow: none; /* remove shadow */
+      image-rendering: -webkit-optimize-contrast; /* sharpen */
+    }
+    /* Heading */
+    h1 {
+      font-size: 2.75rem;
+      font-weight: 700;
+      color: #FF000B;
+      margin-bottom: 6px;
+      letter-spacing: 0.06em;
+      user-select: none;
+    }
+    /* Subtitle "Website telah di retas sepenuhnya oleh Anon 404 Ft AnonDav02" with updated color */
+    .hacked-text {
+      margin-top: 4px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #848484;
+      letter-spacing: 0.04em;
+      user-select: text;
+      margin-bottom: 16px;
+    }
+
+    /* Copyright with gradient text */
+    .copyright {
+      font-weight: 600;
+      font-size: 0.85rem;
+      background: linear-gradient(90deg, var(--color-darkblue), var(--color-green-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 32px;
+      user-select: none;
+    }
+
+    /* Audio player style without green box shadow */
+    audio {
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto 36px;
+      border-radius: 0.5rem;
+      outline-offset: 4px;
+      background: #222;
+      display: block;
+    }
+
+    /* Save RajaAmpat */
+    .save-rajaampat {
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: var(--color-green);
+      margin-bottom: 30px;
+      user-select: text;
+      letter-spacing: 0.06em;
+    }
+
+    /* Penolakan paragraph */
+    .penolakan {
+      font-size: 1rem;
+      line-height: 1.5;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #fff;
+      user-select: text;
+    }
+    .penolakan .highlight {
+      color: var(--color-red);
+      font-weight: 700;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 400px) {
+      h1 {
+        font-size: 2.25rem;
+      }
+      .save-rajaampat {
+        font-size: 1.3rem;
+      }
+      .penolakan {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container" role="main">
+    <img src="Ariel.png" alt="Profil" class="profile" />
+    <h1>SEC TREASER TEAM</h1>
+    <div class="hacked-text" aria-label="Info hacked text">Website telah di retas sepenuhnya oleh Anon 404 Ft AnonDav02</div>
+    <div class="copyright">Copyright 2025</div>
+    <audio id="audio" controls preload="auto" playsinline>
+      <source src="tanahairku.mp3" type="audio/mpeg" />
+      <source src="your-audio.ogg" type="audio/ogg" />
+      Browser Anda tidak mendukung elemen audio.
+    </audio>
+    <div class="save-rajaampat" aria-label="Save Raja Ampat hashtag">#SAVE RAJAAMPAT</div>
+    <p class="penolakan" aria-label="Pernyataan penolakan">
+      Kami, masyarakat yang peduli terhadap kelestarian alam dan masa depan generasi mendatang, 
+      dengan ini menyatakan 
+      <span class="highlight">penolakan tegas terhadap rencana maupun aktivitas pertambangan nikel di wilayah RajaAmpat.</span>
+    </p>
+  </main>
+
+  <script>
+    (function(){
+      const audio = document.getElementById('audio');
+      if (!audio) return;
+      
+      function tryPlay() {
+        if (audio.paused) {
+          audio.play().catch(() => {});
+        }
+      }
+
+      function onUserInteraction() {
+        tryPlay();
+        window.removeEventListener('click', onUserInteraction);
+        window.removeEventListener('touchstart', onUserInteraction);
+        window.removeEventListener('keydown', onUserInteraction);
+      }
+
+      window.addEventListener('click', onUserInteraction, { once: true, passive: true });
+      window.addEventListener('touchstart', onUserInteraction, { once: true, passive: true });
+      window.addEventListener('keydown', onUserInteraction, { once: true, passive: true });
+      
+      tryPlay();
+    })();
+  </script>
+</body>
+</html>
+
